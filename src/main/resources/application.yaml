@@ -1,0 +1,26 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: Product Microservice
+  profiles:
+    active: prod
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: shopping
+product:
+  currencies:
+    - INR
+    - USD
+    - EUR
+---
+server:
+  port: 9094
+spring:
+  config:
+    activate:
+      on-profile:
+        -prod
